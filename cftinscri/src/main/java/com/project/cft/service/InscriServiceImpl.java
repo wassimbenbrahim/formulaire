@@ -119,4 +119,13 @@ System.out.println("Mail Send...");
 			sb.append(chars.charAt(rnd.nextInt(chars.length())));
 		return sb.toString();
 	}
+	
+	
+	
+	
+	
+	 public inscription login(String username, String password) {
+		  inscription user = inscriRepository.findByUsernameAndPassword(username, password);
+		   return user;
+		  }
 }

@@ -23,4 +23,5 @@ public interface InscriService {
 	 inscription retrieverefusé(Long id);
 	 Collection<inscription> listerefuse();
 	 String generateRandomPassword(int len);
+	 inscription login(String username, String password);
 }

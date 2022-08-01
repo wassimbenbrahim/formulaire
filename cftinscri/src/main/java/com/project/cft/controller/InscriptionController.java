@@ -1,9 +1,12 @@
 package com.project.cft.controller;
 
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -98,5 +101,27 @@ public class InscriptionController {
 	    public inscription etudrefuse(@PathVariable Long id) {
 	        return service.retrieverefusé(id);
 	    }
+	    
+	    
+	    
+	    
+	    @PostMapping("/login")
+	    public String login(@RequestBody  inscription user ) {
+	    
+	     inscription oauthUser = service.login(user.getUsername(), user.getPassword());
+	    
+	 
+	     System.out.print(oauthUser);
+	     if(Objects.nonNull(oauthUser))
+	     {
+	  
+	     return "redirect:/";
+	    
+	    
+	     } else {
+	     return "redirect:/login";
+	    
+	    
+	     }
 
-}
+}}

@@ -28,4 +28,7 @@ Collection<inscription> listeattente();
 		  value = "SELECT * FROM inscription u WHERE u.refuse = 1 AND u.status = 0", 
 		  nativeQuery = true)
 Collection<inscription> listerefuse();
+
+
+inscription findByUsernameAndPassword(String username, String password);
 }
